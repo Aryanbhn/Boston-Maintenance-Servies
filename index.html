@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riley Roofing & Property Maintenance | Bedworth & Coventry</title>
+<title>Riley Roofing & Property Maintenance</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -19,20 +19,6 @@ body{
 font-family:'Poppins', sans-serif;
 background:#f4f6f9;
 color:#222;
-position:relative;
-}
-
-/* Subtle Background Pattern */
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image: radial-gradient(rgba(56,189,248,0.05) 1px, transparent 1px);
-background-size:40px 40px;
-z-index:-1;
 }
 
 /* HEADER */
@@ -40,7 +26,6 @@ header{
 position:fixed;
 width:100%;
 top:0;
-left:0;
 background:#0f172a;
 padding:20px 10%;
 display:flex;
@@ -53,12 +38,11 @@ box-shadow:0 4px 20px rgba(0,0,0,0.2);
 header h1{
 color:#fff;
 font-size:18px;
-font-weight:600;
 }
 
 header a{
-text-decoration:none;
 color:#fff;
+text-decoration:none;
 margin-left:25px;
 font-size:14px;
 transition:0.3s;
@@ -71,8 +55,9 @@ color:#38bdf8;
 /* HERO */
 .hero{
 height:100vh;
-background:linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)),
-url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+background:
+linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)),
+url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -81,8 +66,6 @@ align-items:center;
 text-align:center;
 color:#fff;
 padding:0 20px;
-position:relative;
-overflow:hidden;
 }
 
 .hero h2{
@@ -105,7 +88,6 @@ text-decoration:none;
 color:#0f172a;
 font-weight:600;
 transition:0.3s;
-display:inline-block;
 }
 
 .btn:hover{
@@ -113,35 +95,9 @@ background:#0ea5e9;
 transform:scale(1.05);
 }
 
-/* Floating Shapes */
-.floating-shape{
-position:absolute;
-width:80px;
-height:80px;
-background:rgba(56,189,248,0.08);
-border-radius:50%;
-animation:float 6s ease-in-out infinite;
-}
-
-.shape1{
-top:20%;
-left:10%;
-}
-
-.shape2{
-bottom:15%;
-right:12%;
-animation-delay:2s;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0px);}
-50%{transform:translateY(-20px);}
-}
-
-/* SECTIONS */
+/* SECTION DEFAULT */
 section{
-padding:100px 10%;
+padding:120px 10%;
 opacity:0;
 transform:translateY(40px);
 transition:1s ease;
@@ -153,31 +109,31 @@ transform:translateY(0);
 }
 
 section h3{
-font-size:28px;
+font-size:30px;
 margin-bottom:40px;
 text-align:center;
 position:relative;
-display:inline-block;
-left:50%;
-transform:translateX(-50%);
+display:block;
 }
 
 section h3::after{
 content:"";
-position:absolute;
-left:0;
-bottom:-8px;
-width:0%;
+display:block;
+width:60px;
 height:3px;
 background:#38bdf8;
-transition:0.6s ease;
+margin:15px auto 0;
 }
 
-section.show h3::after{
-width:100%;
+/* SERVICES SECTION WITH PHOTO */
+#services{
+background:
+linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+url('https://images.unsplash.com/photo-1590585152220-90363fe7e115');
+background-size:cover;
+background-position:center;
 }
 
-/* SERVICES */
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -199,8 +155,6 @@ transform:translateY(-10px);
 .card h4{
 margin-bottom:10px;
 font-size:18px;
-font-weight:600;
-color:#0f172a;
 }
 
 .card p{
@@ -223,33 +177,35 @@ color:gold;
 margin-bottom:10px;
 }
 
-/* QUOTE SECTION */
+/* QUOTE SECTION WITH TEXTURE */
 .quote-section{
-background:#0f172a;
+background:
+linear-gradient(rgba(15,23,42,0.9), rgba(15,23,42,0.9)),
+url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
+background-size:cover;
+background-position:center;
 color:#fff;
 text-align:center;
-padding:120px 10%;
+padding:140px 10%;
 }
 
 .quote-section h3{
-font-size:32px;
-margin-bottom:20px;
+font-size:36px;
 }
 
 .quote-section p{
-margin-bottom:30px;
+margin:20px 0 30px 0;
 font-size:18px;
 }
 
 .quote-btn{
 background:#38bdf8;
-padding:18px 45px;
+padding:18px 50px;
 border-radius:50px;
 text-decoration:none;
 color:#0f172a;
 font-weight:700;
 transition:0.3s;
-display:inline-block;
 }
 
 .quote-btn:hover{
@@ -257,8 +213,13 @@ background:#0ea5e9;
 transform:scale(1.08);
 }
 
-/* CONTACT */
-.contact{
+/* CONTACT SECTION WITH PHOTO */
+#contact{
+background:
+linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3');
+background-size:cover;
+background-position:center;
 text-align:center;
 }
 
@@ -284,7 +245,6 @@ background:#0f172a;
 color:#fff;
 text-align:center;
 padding:30px 10%;
-font-size:14px;
 }
 
 /* Animations */
@@ -300,6 +260,7 @@ to{opacity:1; transform:translateY(0);}
 
 </style>
 </head>
+
 <body>
 
 <header>
@@ -312,9 +273,6 @@ to{opacity:1; transform:translateY(0);}
 </header>
 
 <section class="hero">
-<div class="floating-shape shape1"></div>
-<div class="floating-shape shape2"></div>
-
 <div>
 <h2>Trusted Roofing Experts in Bedworth & Coventry</h2>
 <p>Reliable. Professional. 5-Star Rated Roofing & Property Maintenance Services.</p>
@@ -324,38 +282,14 @@ to{opacity:1; transform:translateY(0);}
 
 <section id="services">
 <h3>Our Roofing Services</h3>
+
 <div class="services">
-
-<div class="card">
-<h4>Fascias & Soffits</h4>
-<p>Professional installation and replacement to protect your roofline and improve your property's appearance.</p>
-</div>
-
-<div class="card">
-<h4>Cladding</h4>
-<p>Durable and weather-resistant cladding solutions designed to enhance and protect your exterior walls.</p>
-</div>
-
-<div class="card">
-<h4>Guttering</h4>
-<p>Complete gutter repairs and replacements to prevent leaks, damp issues and structural damage.</p>
-</div>
-
-<div class="card">
-<h4>Re-Roofs</h4>
-<p>Full roof replacements using high-quality materials for long-lasting performance and protection.</p>
-</div>
-
-<div class="card">
-<h4>Flat Roofs</h4>
-<p>Expert flat roofing installations and repairs for garages, extensions and commercial properties.</p>
-</div>
-
-<div class="card">
-<h4>Leadwork & Repointing</h4>
-<p>Precision leadwork and brick repointing to maintain structural integrity and weather resistance.</p>
-</div>
-
+<div class="card"><h4>Fascias & Soffits</h4><p>Professional installation and replacement.</p></div>
+<div class="card"><h4>Cladding</h4><p>Durable and weather-resistant exterior solutions.</p></div>
+<div class="card"><h4>Guttering</h4><p>Full repairs and replacements.</p></div>
+<div class="card"><h4>Re-Roofs</h4><p>Complete roof replacement services.</p></div>
+<div class="card"><h4>Flat Roofs</h4><p>Expert flat roofing installations.</p></div>
+<div class="card"><h4>Leadwork & Repointing</h4><p>Precision finishing and structural protection.</p></div>
 </div>
 </section>
 
@@ -364,17 +298,17 @@ to{opacity:1; transform:translateY(0);}
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>Very happy with the work carried out. Honest & trustworthy with a fair price. I would definitely recommend Riley’s Roofing again.</p>
+<p>Very honest & trustworthy with a fair price. Would highly recommend.</p>
 </div>
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>Arrived quickly after calling for a quote. Explained everything clearly. Quick and great service.</p>
+<p>Quick service, explained everything clearly. Will definitely use again.</p>
 </div>
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>Spotted a leak Monday, quoted Tuesday and fixed Friday. Friendly and professional with great communication.</p>
+<p>Friendly and professional. Took pictures throughout the job. Really pleased.</p>
 </div>
 
 </section>
@@ -385,7 +319,7 @@ to{opacity:1; transform:translateY(0);}
 <a href="tel:07791995977" class="quote-btn">📞 Request a Free Quote</a>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact">
 <h3>Contact Us Today</h3>
 <p>📍 10 Ashford Dr, Bedworth CV12 8QJ</p>
 <p>📞 07791 995977</p>
@@ -401,12 +335,11 @@ width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen=
 </section>
 
 <footer>
-© 2026 Riley Roofing & Property Maintenance | Serving Bedworth & Coventry
+© 2026 Riley Roofing & Property Maintenance
 </footer>
 
 <script>
 const sections = document.querySelectorAll("section");
-
 sections[0].classList.add("show");
 sections[1].classList.add("show");
 
@@ -414,9 +347,7 @@ window.addEventListener("scroll", () => {
 sections.forEach(section => {
 const top = window.scrollY;
 const offset = section.offsetTop - 400;
-const height = section.offsetHeight;
-
-if(top > offset && top < offset + height){
+if(top > offset){
 section.classList.add("show");
 }
 });
