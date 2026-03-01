@@ -1,3 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riley Roofing & Property Maintenance | Bedworth & Coventry</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f4f6f9;
+    color:#222;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    background:#0f172a;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    box-shadow:0 4px 20px rgba(0,0,0,0.2);
+}
+
+header h1{
+    color:#fff;
+    font-size:20px;
+    font-weight:600;
+}
+
+header a{
+    text-decoration:none;
+    color:#fff;
+    margin-left:25px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+header a:hover{
+    color:#38bdf8;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)),
+    url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    padding:0 20px;
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:20px;
+    animation:fadeDown 1s ease forwards;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:30px;
+    animation:fadeUp 1.5s ease forwards;
+}
+
+.btn{
+    background:#38bdf8;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    color:#0f172a;
+    font-weight:600;
+    transition:0.3s;
+    display:inline-block;
+}
+
+.btn:hover{
+    background:#0ea5e9;
+    transform:scale(1.05);
+}
+
+/* SECTIONS */
+section{
+    padding:100px 10%;
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+section h3{
+    font-size:28px;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* REVIEWS */
+.review{
+    background:#fff;
+    padding:25px;
+    margin-bottom:20px;
+    border-left:5px solid #38bdf8;
+    border-radius:8px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.stars{
+    color:gold;
+    margin-bottom:10px;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+}
+
+.call-btn{
+    margin-top:20px;
+    display:inline-block;
+    background:#16a34a;
+    color:#fff;
+    padding:15px 40px;
+    border-radius:50px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.call-btn:hover{
+    background:#15803d;
+    transform:scale(1.05);
+}
+
+footer{
+    background:#0f172a;
+    color:#fff;
+    text-align:center;
+    padding:30px 10%;
+    font-size:14px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<h1>Riley Roofing & Property Maintenance</h1>
+<nav>
+<a href="#services">Services</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h2>Trusted Roofing Experts in Bedworth & Coventry</h2>
+<p>Reliable. Professional. 5-Star Rated Roofing & Property Maintenance Services.</p>
+<a href="tel:07791995977" class="btn">📞 Call Now</a>
+</div>
+</section>
+
+<section id="services">
+<h3>Our Services</h3>
+<div class="services">
+<div class="card">Roof Repairs & Leak Fixes</div>
+<div class="card">New Roof Installations</div>
+<div class="card">Fascias & Guttering</div>
+<div class="card">Property Maintenance</div>
+<div class="card">Emergency Call Outs</div>
+<div class="card">General Roofing Work</div>
+</div>
+</section>
+
+<section id="reviews">
+<h3>5 Star Customer Reviews</h3>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>Very happy with the work carried out. Bodie talked me through the whole process from start to finish. Very honest & trustworthy with a fair price. I would definitely use Riley’s Roofing again and recommend them.</p>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>Called for a quote and he arrived within an hour. Explained everything clearly, good price and quick service. Will definitely use again.</p>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>Spotted a leak Monday, quoted Tuesday and fixed Friday. Friendly people who went over and above. Took pictures throughout the job. Really pleased.</p>
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+<h3>Contact Us Today</h3>
+<p>📍 10 Ashford Dr, Bedworth CV12 8QJ</p>
+<p>📞 07791 995977</p>
+<a href="tel:07791995977" class="call-btn">Call Now</a>
+
+<br><br>
+
+<iframe 
+src="https://www.google.com/maps?q=10+Ashford+Dr,+Bedworth+CV12+8QJ&output=embed"
+width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="">
+</iframe>
+
+</section>
+
+<footer>
+© 2026 Riley Roofing & Property Maintenance | Serving Bedworth & Coventry
+</footer>
+
 <script>
 const sections = document.querySelectorAll("section");
 
@@ -17,3 +280,6 @@ section.classList.add("show");
 });
 });
 </script>
+
+</body>
+</html>
