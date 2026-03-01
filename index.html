@@ -61,11 +61,13 @@ url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4');
 background-size:cover;
 background-position:center;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
 color:#fff;
 padding:0 20px;
+position:relative;
 }
 
 .hero h2{
@@ -78,6 +80,22 @@ animation:fadeDown 1s ease forwards;
 font-size:18px;
 margin-bottom:30px;
 animation:fadeUp 1.5s ease forwards;
+}
+
+/* Animated Roofline */
+.roofline{
+width:200px;
+margin-bottom:30px;
+stroke:#38bdf8;
+stroke-width:3;
+fill:none;
+stroke-dasharray:500;
+stroke-dashoffset:500;
+animation:drawRoof 2s ease forwards;
+}
+
+@keyframes drawRoof{
+to{stroke-dashoffset:0;}
 }
 
 .btn{
@@ -95,7 +113,23 @@ background:#0ea5e9;
 transform:scale(1.05);
 }
 
-/* SECTION DEFAULT */
+/* Diagonal Divider */
+.diagonal{
+position:relative;
+}
+
+.diagonal::after{
+content:"";
+position:absolute;
+bottom:-1px;
+left:0;
+width:100%;
+height:100px;
+background:#f4f6f9;
+clip-path:polygon(0 0, 100% 100%, 0 100%);
+}
+
+/* SECTIONS */
 section{
 padding:120px 10%;
 opacity:0;
@@ -112,8 +146,6 @@ section h3{
 font-size:30px;
 margin-bottom:40px;
 text-align:center;
-position:relative;
-display:block;
 }
 
 section h3::after{
@@ -125,13 +157,9 @@ background:#38bdf8;
 margin:15px auto 0;
 }
 
-/* SERVICES SECTION WITH PHOTO */
+/* SERVICES */
 #services{
-background:
-linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
-url('https://images.unsplash.com/photo-1590585152220-90363fe7e115');
-background-size:cover;
-background-position:center;
+background:#fff;
 }
 
 .services{
@@ -141,25 +169,15 @@ gap:30px;
 }
 
 .card{
-background:#fff;
+background:#f9fafb;
 padding:30px;
 border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
 transition:0.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-}
-
-.card h4{
-margin-bottom:10px;
-font-size:18px;
-}
-
-.card p{
-font-size:14px;
-color:#555;
 }
 
 /* REVIEWS */
@@ -177,25 +195,17 @@ color:gold;
 margin-bottom:10px;
 }
 
-/* QUOTE SECTION WITH TEXTURE */
+/* QUOTE SECTION */
 .quote-section{
-background:
-linear-gradient(rgba(15,23,42,0.9), rgba(15,23,42,0.9)),
-url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
-background-size:cover;
-background-position:center;
+background:#0f172a;
 color:#fff;
 text-align:center;
 padding:140px 10%;
+position:relative;
 }
 
 .quote-section h3{
 font-size:36px;
-}
-
-.quote-section p{
-margin:20px 0 30px 0;
-font-size:18px;
 }
 
 .quote-btn{
@@ -209,17 +219,12 @@ transition:0.3s;
 }
 
 .quote-btn:hover{
-background:#0ea5e9;
 transform:scale(1.08);
 }
 
-/* CONTACT SECTION WITH PHOTO */
+/* CONTACT */
 #contact{
-background:
-linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
-url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3');
-background-size:cover;
-background-position:center;
+background:#fff;
 text-align:center;
 }
 
@@ -236,8 +241,29 @@ transition:0.3s;
 }
 
 .call-btn:hover{
-background:#15803d;
 transform:scale(1.05);
+}
+
+/* Floating Call Button */
+.floating-call{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#16a34a;
+color:#fff;
+padding:18px 22px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+z-index:9999;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(22,163,74,0.6);}
+70%{box-shadow:0 0 0 15px rgba(22,163,74,0);}
+100%{box-shadow:0 0 0 0 rgba(22,163,74,0);}
 }
 
 footer{
@@ -247,7 +273,6 @@ text-align:center;
 padding:30px 10%;
 }
 
-/* Animations */
 @keyframes fadeDown{
 from{opacity:0; transform:translateY(-30px);}
 to{opacity:1; transform:translateY(0);}
@@ -272,50 +297,41 @@ to{opacity:1; transform:translateY(0);}
 </nav>
 </header>
 
-<section class="hero">
-<div>
+<section class="hero diagonal">
+
+<!-- Animated Roof SVG -->
+<svg class="roofline" viewBox="0 0 200 60">
+<polyline points="10,40 60,10 110,40 160,10 190,40" />
+</svg>
+
 <h2>Trusted Roofing Experts in Bedworth & Coventry</h2>
 <p>Reliable. Professional. 5-Star Rated Roofing & Property Maintenance Services.</p>
 <a href="tel:07791995977" class="btn">📞 Call Now</a>
-</div>
+
 </section>
 
 <section id="services">
 <h3>Our Roofing Services</h3>
-
 <div class="services">
-<div class="card"><h4>Fascias & Soffits</h4><p>Professional installation and replacement.</p></div>
-<div class="card"><h4>Cladding</h4><p>Durable and weather-resistant exterior solutions.</p></div>
-<div class="card"><h4>Guttering</h4><p>Full repairs and replacements.</p></div>
-<div class="card"><h4>Re-Roofs</h4><p>Complete roof replacement services.</p></div>
-<div class="card"><h4>Flat Roofs</h4><p>Expert flat roofing installations.</p></div>
-<div class="card"><h4>Leadwork & Repointing</h4><p>Precision finishing and structural protection.</p></div>
+<div class="card">Fascias & Soffits</div>
+<div class="card">Cladding</div>
+<div class="card">Guttering</div>
+<div class="card">Re-Roofs</div>
+<div class="card">Flat Roofs</div>
+<div class="card">Leadwork & Repointing</div>
 </div>
 </section>
 
 <section id="reviews">
 <h3>5 Star Customer Reviews</h3>
-
-<div class="review">
-<div class="stars">★★★★★</div>
-<p>Very honest & trustworthy with a fair price. Would highly recommend.</p>
-</div>
-
-<div class="review">
-<div class="stars">★★★★★</div>
-<p>Quick service, explained everything clearly. Will definitely use again.</p>
-</div>
-
-<div class="review">
-<div class="stars">★★★★★</div>
-<p>Friendly and professional. Took pictures throughout the job. Really pleased.</p>
-</div>
-
+<div class="review"><div class="stars">★★★★★</div>Very honest & trustworthy with a fair price.</div>
+<div class="review"><div class="stars">★★★★★</div>Quick service, explained everything clearly.</div>
+<div class="review"><div class="stars">★★★★★</div>Friendly and professional throughout.</div>
 </section>
 
 <section class="quote-section">
 <h3>Get a Free Roofing Quote Today</h3>
-<p>Fast response. Honest pricing. Professional workmanship you can trust.</p>
+<br>
 <a href="tel:07791995977" class="quote-btn">📞 Request a Free Quote</a>
 </section>
 
@@ -324,19 +340,14 @@ to{opacity:1; transform:translateY(0);}
 <p>📍 10 Ashford Dr, Bedworth CV12 8QJ</p>
 <p>📞 07791 995977</p>
 <a href="tel:07791995977" class="call-btn">Call Now</a>
-
-<br><br>
-
-<iframe 
-src="https://www.google.com/maps?q=10+Ashford+Dr,+Bedworth+CV12+8QJ&output=embed"
-width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="">
-</iframe>
-
 </section>
 
 <footer>
 © 2026 Riley Roofing & Property Maintenance
 </footer>
+
+<!-- Floating Call Button -->
+<a href="tel:07791995977" class="floating-call">📞 Call Now</a>
 
 <script>
 const sections = document.querySelectorAll("section");
