@@ -3,25 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riley Roofing & Property Maintenance</title>
+<title>Boston Maintenance Services</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 scroll-behavior:smooth;
 }
-
 body{
 font-family:'Poppins', sans-serif;
 background:#f4f6f9;
 color:#222;
 }
-
-/* HEADER */
 header{
 position:fixed;
 width:100%;
@@ -34,23 +30,9 @@ align-items:center;
 z-index:1000;
 box-shadow:0 4px 20px rgba(0,0,0,0.2);
 }
-
-header h1{
-color:#fff;
-font-size:18px;
-}
-
-header a{
-color:#fff;
-text-decoration:none;
-margin-left:25px;
-font-size:14px;
-transition:0.3s;
-}
-
-header a:hover{
-color:#38bdf8;
-}
+header h1{color:#fff;font-size:18px;}
+header a{color:#fff;text-decoration:none;margin-left:25px;font-size:14px;transition:0.3s;}
+header a:hover{color:#38bdf8;}
 
 /* HERO */
 .hero{
@@ -69,18 +51,8 @@ color:#fff;
 padding:0 20px;
 position:relative;
 }
-
-.hero h2{
-font-size:42px;
-margin-bottom:20px;
-animation:fadeDown 1s ease forwards;
-}
-
-.hero p{
-font-size:18px;
-margin-bottom:30px;
-animation:fadeUp 1.5s ease forwards;
-}
+.hero h2{font-size:42px;margin-bottom:20px;animation:fadeDown 1s ease forwards;}
+.hero p{font-size:18px;margin-bottom:30px;animation:fadeUp 1.5s ease forwards;}
 
 /* Animated Roofline */
 .roofline{
@@ -93,31 +65,13 @@ stroke-dasharray:500;
 stroke-dashoffset:500;
 animation:drawRoof 2s ease forwards;
 }
+@keyframes drawRoof{to{stroke-dashoffset:0;}}
 
-@keyframes drawRoof{
-to{stroke-dashoffset:0;}
-}
-
-.btn{
-background:#38bdf8;
-padding:15px 35px;
-border-radius:50px;
-text-decoration:none;
-color:#0f172a;
-font-weight:600;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#0ea5e9;
-transform:scale(1.05);
-}
+.btn{background:#38bdf8;padding:15px 35px;border-radius:50px;text-decoration:none;color:#0f172a;font-weight:600;transition:0.3s;}
+.btn:hover{background:#0ea5e9;transform:scale(1.05);}
 
 /* Diagonal Divider */
-.diagonal{
-position:relative;
-}
-
+.diagonal{position:relative;}
 .diagonal::after{
 content:"";
 position:absolute;
@@ -136,18 +90,8 @@ opacity:0;
 transform:translateY(40px);
 transition:1s ease;
 }
-
-section.show{
-opacity:1;
-transform:translateY(0);
-}
-
-section h3{
-font-size:30px;
-margin-bottom:40px;
-text-align:center;
-}
-
+section.show{opacity:1;transform:translateY(0);}
+section h3{font-size:30px;margin-bottom:40px;text-align:center;}
 section h3::after{
 content:"";
 display:block;
@@ -158,138 +102,51 @@ margin:15px auto 0;
 }
 
 /* SERVICES */
-#services{
-background:#fff;
-}
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
+#services{background:#fff;}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
 .card{
-background:#f9fafb;
-padding:30px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
+background:#f9fafb;padding:30px;border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);transition:0.3s;}
+.card:hover{transform:translateY(-10px);}
 
 /* REVIEWS */
-.review{
-background:#fff;
-padding:25px;
-margin-bottom:20px;
-border-left:5px solid #38bdf8;
-border-radius:8px;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-
-.stars{
-color:gold;
-margin-bottom:10px;
-}
+.review{background:#fff;padding:25px;margin-bottom:20px;border-left:5px solid #38bdf8;border-radius:8px;box-shadow:0 5px 15px rgba(0,0,0,0.05);}
+.stars{color:gold;margin-bottom:10px;}
 
 /* QUOTE SECTION */
 .quote-section{
-background:#0f172a;
-color:#fff;
-text-align:center;
-padding:140px 10%;
-position:relative;
-}
-
-.quote-section h3{
-font-size:36px;
-}
-
+background:#0f172a;color:#fff;text-align:center;padding:140px 10%;position:relative;}
+.quote-section h3{font-size:36px;}
 .quote-btn{
-background:#38bdf8;
-padding:18px 50px;
-border-radius:50px;
-text-decoration:none;
-color:#0f172a;
-font-weight:700;
-transition:0.3s;
-}
-
-.quote-btn:hover{
-transform:scale(1.08);
-}
+background:#38bdf8;padding:18px 50px;border-radius:50px;text-decoration:none;color:#0f172a;font-weight:700;transition:0.3s;}
+.quote-btn:hover{transform:scale(1.08);}
 
 /* CONTACT */
-#contact{
-background:#fff;
-text-align:center;
-}
-
+#contact{background:#fff;text-align:center;}
 .call-btn{
-margin-top:20px;
-display:inline-block;
-background:#16a34a;
-color:#fff;
-padding:15px 40px;
-border-radius:50px;
-font-weight:600;
-text-decoration:none;
-transition:0.3s;
-}
-
-.call-btn:hover{
-transform:scale(1.05);
-}
+margin-top:20px;display:inline-block;background:#16a34a;color:#fff;padding:15px 40px;border-radius:50px;font-weight:600;text-decoration:none;transition:0.3s;}
+.call-btn:hover{transform:scale(1.05);}
 
 /* Floating Call Button */
 .floating-call{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#16a34a;
-color:#fff;
-padding:18px 22px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-z-index:9999;
-animation:pulse 2s infinite;
-}
-
+position:fixed;bottom:25px;right:25px;background:#16a34a;color:#fff;padding:18px 22px;border-radius:50px;text-decoration:none;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.3);z-index:9999;animation:pulse 2s infinite;}
 @keyframes pulse{
 0%{box-shadow:0 0 0 0 rgba(22,163,74,0.6);}
 70%{box-shadow:0 0 0 15px rgba(22,163,74,0);}
 100%{box-shadow:0 0 0 0 rgba(22,163,74,0);}
 }
 
-footer{
-background:#0f172a;
-color:#fff;
-text-align:center;
-padding:30px 10%;
-}
+footer{background:#0f172a;color:#fff;text-align:center;padding:30px 10%;}
 
-@keyframes fadeDown{
-from{opacity:0; transform:translateY(-30px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes fadeUp{
-from{opacity:0; transform:translateY(30px);}
-to{opacity:1; transform:translateY(0);}
-}
+@keyframes fadeDown{from{opacity:0; transform:translateY(-30px);}to{opacity:1; transform:translateY(0);}}
+@keyframes fadeUp{from{opacity:0; transform:translateY(30px);}to{opacity:1; transform:translateY(0);}}
 
 </style>
 </head>
-
 <body>
 
 <header>
-<h1>Riley Roofing & Property Maintenance</h1>
+<h1>Boston Maintenance Services</h1>
 <nav>
 <a href="#services">Services</a>
 <a href="#reviews">Reviews</a>
@@ -298,20 +155,16 @@ to{opacity:1; transform:translateY(0);}
 </header>
 
 <section class="hero diagonal">
-
-<!-- Animated Roof SVG -->
 <svg class="roofline" viewBox="0 0 200 60">
 <polyline points="10,40 60,10 110,40 160,10 190,40" />
 </svg>
-
-<h2>Trusted Roofing Experts in Bedworth & Coventry</h2>
-<p>Reliable. Professional. 5-Star Rated Roofing & Property Maintenance Services.</p>
-<a href="tel:07791995977" class="btn">📞 Call Now</a>
-
+<h2>Reliable Maintenance Experts in Coventry</h2>
+<p>Professional, honest, and trusted contractors for all property maintenance needs.</p>
+<a href="tel:02476716316" class="btn">📞 Call Now</a>
 </section>
 
 <section id="services">
-<h3>Our Roofing Services</h3>
+<h3>Our Maintenance Services</h3>
 <div class="services">
 <div class="card">Fascias & Soffits</div>
 <div class="card">Cladding</div>
@@ -327,46 +180,45 @@ to{opacity:1; transform:translateY(0);}
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>
-Great bunch of lads. Quick and efficient with a quality finish. Work was done within a day for gutters and new fascia’s. Highly recommend them for any work needed.
-</p>
+<p>First class service and friendly staff, won't rip you off always gives sound advice! Highly recommended!</p>
 </div>
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>
-Spotted a leak Monday, quoted Tuesday and fixed Friday. Great service, lovely friendly people and went over and above what needed doing, taking pictures along the way so we could see what the problem was and again when the fixes were done. Really pleased.
-</p>
+<p>Great contractors, always go to job on time and well priced. Strongly recommend. 👍</p>
 </div>
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>
-Round within 24 hours to fix a leak in the guttering but also noticed some other minor issues and fixed those also. Great work great team. No hard sell just advice too which was nice.
-</p>
+<p>Great service from John today, always a pleasure dealing with Team at Boston.</p>
 </div>
 
 </section>
 
 <section class="quote-section">
-<h3>Get a Free Roofing Quote Today</h3>
-<br>
-<a href="tel:07791995977" class="quote-btn">📞 Request a Free Quote</a>
+<h3>Get a Free Maintenance Quote Today</h3>
+<a href="tel:02476716316" class="quote-btn">📞 Request a Free Quote</a>
 </section>
 
 <section id="contact">
 <h3>Contact Us Today</h3>
-<p>📍 10 Ashford Dr, Bedworth CV12 8QJ</p>
-<p>📞 07791 995977</p>
-<a href="tel:07791995977" class="call-btn">Call Now</a>
+<p>📍 116 Grayswood Ave, Coventry CV5 8HP</p>
+<p>📞 02476 716316</p>
+<a href="tel:02476716316" class="call-btn">Call Now</a>
+
+<br><br>
+<iframe 
+src="https://www.google.com/maps?q=116+Grayswood+Ave,+Coventry+CV5+8HP&output=embed"
+width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="">
+</iframe>
+
 </section>
 
 <footer>
-© 2026 Riley Roofing & Property Maintenance
+© 2026 Boston Maintenance Services
 </footer>
 
-<!-- Floating Call Button -->
-<a href="tel:07791995977" class="floating-call">📞 Call Now</a>
+<a href="tel:02476716316" class="floating-call">📞 Call Now</a>
 
 <script>
 const sections = document.querySelectorAll("section");
