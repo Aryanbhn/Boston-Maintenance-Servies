@@ -5,188 +5,297 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Riley Roofing & Property Maintenance | Bedworth & Coventry</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins', sans-serif;
-    background:#f4f6f9;
-    color:#222;
+font-family:'Poppins', sans-serif;
+background:#f4f6f9;
+color:#222;
+position:relative;
+}
+
+/* Subtle Background Pattern */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image: radial-gradient(rgba(56,189,248,0.05) 1px, transparent 1px);
+background-size:40px 40px;
+z-index:-1;
 }
 
 /* HEADER */
 header{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    background:#0f172a;
-    padding:20px 10%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
-    box-shadow:0 4px 20px rgba(0,0,0,0.2);
+position:fixed;
+width:100%;
+top:0;
+left:0;
+background:#0f172a;
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+box-shadow:0 4px 20px rgba(0,0,0,0.2);
 }
 
 header h1{
-    color:#fff;
-    font-size:20px;
-    font-weight:600;
+color:#fff;
+font-size:18px;
+font-weight:600;
 }
 
 header a{
-    text-decoration:none;
-    color:#fff;
-    margin-left:25px;
-    font-size:14px;
-    transition:0.3s;
+text-decoration:none;
+color:#fff;
+margin-left:25px;
+font-size:14px;
+transition:0.3s;
 }
 
 header a:hover{
-    color:#38bdf8;
+color:#38bdf8;
 }
 
 /* HERO */
 .hero{
-    height:100vh;
-    background:linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)),
-    url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:#fff;
-    padding:0 20px;
+height:100vh;
+background:linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)),
+url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:#fff;
+padding:0 20px;
+position:relative;
+overflow:hidden;
 }
 
 .hero h2{
-    font-size:42px;
-    margin-bottom:20px;
-    animation:fadeDown 1s ease forwards;
+font-size:42px;
+margin-bottom:20px;
+animation:fadeDown 1s ease forwards;
 }
 
 .hero p{
-    font-size:18px;
-    margin-bottom:30px;
-    animation:fadeUp 1.5s ease forwards;
+font-size:18px;
+margin-bottom:30px;
+animation:fadeUp 1.5s ease forwards;
 }
 
 .btn{
-    background:#38bdf8;
-    padding:15px 35px;
-    border-radius:50px;
-    text-decoration:none;
-    color:#0f172a;
-    font-weight:600;
-    transition:0.3s;
-    display:inline-block;
+background:#38bdf8;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+color:#0f172a;
+font-weight:600;
+transition:0.3s;
+display:inline-block;
 }
 
 .btn:hover{
-    background:#0ea5e9;
-    transform:scale(1.05);
+background:#0ea5e9;
+transform:scale(1.05);
+}
+
+/* Floating Shapes */
+.floating-shape{
+position:absolute;
+width:80px;
+height:80px;
+background:rgba(56,189,248,0.08);
+border-radius:50%;
+animation:float 6s ease-in-out infinite;
+}
+
+.shape1{
+top:20%;
+left:10%;
+}
+
+.shape2{
+bottom:15%;
+right:12%;
+animation-delay:2s;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0px);}
+50%{transform:translateY(-20px);}
 }
 
 /* SECTIONS */
 section{
-    padding:100px 10%;
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s ease;
+padding:100px 10%;
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
 }
 
 section.show{
-    opacity:1;
-    transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 
 section h3{
-    font-size:28px;
-    margin-bottom:30px;
-    text-align:center;
+font-size:28px;
+margin-bottom:40px;
+text-align:center;
+position:relative;
+display:inline-block;
+left:50%;
+transform:translateX(-50%);
 }
 
+section h3::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-8px;
+width:0%;
+height:3px;
+background:#38bdf8;
+transition:0.6s ease;
+}
+
+section.show h3::after{
+width:100%;
+}
+
+/* SERVICES */
 .services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .card{
-    background:#fff;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    transition:0.3s;
+background:#fff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+transform:translateY(-10px);
+}
+
+.card h4{
+margin-bottom:10px;
+font-size:18px;
+font-weight:600;
+color:#0f172a;
+}
+
+.card p{
+font-size:14px;
+color:#555;
 }
 
 /* REVIEWS */
 .review{
-    background:#fff;
-    padding:25px;
-    margin-bottom:20px;
-    border-left:5px solid #38bdf8;
-    border-radius:8px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+background:#fff;
+padding:25px;
+margin-bottom:20px;
+border-left:5px solid #38bdf8;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
 .stars{
-    color:gold;
-    margin-bottom:10px;
+color:gold;
+margin-bottom:10px;
+}
+
+/* QUOTE SECTION */
+.quote-section{
+background:#0f172a;
+color:#fff;
+text-align:center;
+padding:120px 10%;
+}
+
+.quote-section h3{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.quote-section p{
+margin-bottom:30px;
+font-size:18px;
+}
+
+.quote-btn{
+background:#38bdf8;
+padding:18px 45px;
+border-radius:50px;
+text-decoration:none;
+color:#0f172a;
+font-weight:700;
+transition:0.3s;
+display:inline-block;
+}
+
+.quote-btn:hover{
+background:#0ea5e9;
+transform:scale(1.08);
 }
 
 /* CONTACT */
 .contact{
-    text-align:center;
+text-align:center;
 }
 
 .call-btn{
-    margin-top:20px;
-    display:inline-block;
-    background:#16a34a;
-    color:#fff;
-    padding:15px 40px;
-    border-radius:50px;
-    font-weight:600;
-    text-decoration:none;
-    transition:0.3s;
+margin-top:20px;
+display:inline-block;
+background:#16a34a;
+color:#fff;
+padding:15px 40px;
+border-radius:50px;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
 }
 
 .call-btn:hover{
-    background:#15803d;
-    transform:scale(1.05);
+background:#15803d;
+transform:scale(1.05);
 }
 
 footer{
-    background:#0f172a;
-    color:#fff;
-    text-align:center;
-    padding:30px 10%;
-    font-size:14px;
+background:#0f172a;
+color:#fff;
+text-align:center;
+padding:30px 10%;
+font-size:14px;
 }
 
-/* ANIMATIONS */
+/* Animations */
 @keyframes fadeDown{
-    from{opacity:0; transform:translateY(-30px);}
-    to{opacity:1; transform:translateY(0);}
+from{opacity:0; transform:translateY(-30px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 @keyframes fadeUp{
-    from{opacity:0; transform:translateY(30px);}
-    to{opacity:1; transform:translateY(0);}
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 </style>
@@ -203,6 +312,9 @@ footer{
 </header>
 
 <section class="hero">
+<div class="floating-shape shape1"></div>
+<div class="floating-shape shape2"></div>
+
 <div>
 <h2>Trusted Roofing Experts in Bedworth & Coventry</h2>
 <p>Reliable. Professional. 5-Star Rated Roofing & Property Maintenance Services.</p>
@@ -211,14 +323,39 @@ footer{
 </section>
 
 <section id="services">
-<h3>Our Services</h3>
+<h3>Our Roofing Services</h3>
 <div class="services">
-<div class="card">Roof Repairs & Leak Fixes</div>
-<div class="card">New Roof Installations</div>
-<div class="card">Fascias & Guttering</div>
-<div class="card">Property Maintenance</div>
-<div class="card">Emergency Call Outs</div>
-<div class="card">General Roofing Work</div>
+
+<div class="card">
+<h4>Fascias & Soffits</h4>
+<p>Professional installation and replacement to protect your roofline and improve your property's appearance.</p>
+</div>
+
+<div class="card">
+<h4>Cladding</h4>
+<p>Durable and weather-resistant cladding solutions designed to enhance and protect your exterior walls.</p>
+</div>
+
+<div class="card">
+<h4>Guttering</h4>
+<p>Complete gutter repairs and replacements to prevent leaks, damp issues and structural damage.</p>
+</div>
+
+<div class="card">
+<h4>Re-Roofs</h4>
+<p>Full roof replacements using high-quality materials for long-lasting performance and protection.</p>
+</div>
+
+<div class="card">
+<h4>Flat Roofs</h4>
+<p>Expert flat roofing installations and repairs for garages, extensions and commercial properties.</p>
+</div>
+
+<div class="card">
+<h4>Leadwork & Repointing</h4>
+<p>Precision leadwork and brick repointing to maintain structural integrity and weather resistance.</p>
+</div>
+
 </div>
 </section>
 
@@ -227,19 +364,25 @@ footer{
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>Very happy with the work carried out. Bodie talked me through the whole process from start to finish. Very honest & trustworthy with a fair price. I would definitely use Riley’s Roofing again and recommend them.</p>
+<p>Very happy with the work carried out. Honest & trustworthy with a fair price. I would definitely recommend Riley’s Roofing again.</p>
 </div>
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>Called for a quote and he arrived within an hour. Explained everything clearly, good price and quick service. Will definitely use again.</p>
+<p>Arrived quickly after calling for a quote. Explained everything clearly. Quick and great service.</p>
 </div>
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>Spotted a leak Monday, quoted Tuesday and fixed Friday. Friendly people who went over and above. Took pictures throughout the job. Really pleased.</p>
+<p>Spotted a leak Monday, quoted Tuesday and fixed Friday. Friendly and professional with great communication.</p>
 </div>
 
+</section>
+
+<section class="quote-section">
+<h3>Get a Free Roofing Quote Today</h3>
+<p>Fast response. Honest pricing. Professional workmanship you can trust.</p>
+<a href="tel:07791995977" class="quote-btn">📞 Request a Free Quote</a>
 </section>
 
 <section id="contact" class="contact">
@@ -264,7 +407,6 @@ width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen=
 <script>
 const sections = document.querySelectorAll("section");
 
-// Show hero + first section immediately
 sections[0].classList.add("show");
 sections[1].classList.add("show");
 
